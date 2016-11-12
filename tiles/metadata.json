@@ -1,0 +1,9 @@
+{
+    "description": "", 
+    "bounds": "-86.8284,36.096,-86.7549,36.1667", 
+    "minzoom": "11", 
+    "version": "1.0.0", 
+    "template": "", 
+    "maxzoom": "20", 
+    "name": "vanderbilt"
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html> <!-- PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">-->
+<html> <!-- xmlns="http://www.w3.org/1999/xhtml">-->
+<head>
+   <link href="assets/css/style.css" rel="stylesheet" type="text/css" />
+   <title>Vanderbilt Campus Map</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+   <script type="text/javascript" src="js/openLayers/ol.js"></script>
+ 
+</head>
+<body>
+	<div id="box">
+		<div id="box-content">
+		</div>
+	</div>
+    
+	<div id="content" style="width:100%; height:100%; position:relative;">
+		<div id="map">
+			<a href="./vanderbilt_campus_map_mobile.html"><img src="assets/images/MOBILE.png" id="redirect" alt="Mobile Site" style="max-width:1000px;" height="auto" width="15%"/></a>
+			<noscript style="padding=20px; font-size:40px;">Javascript must be enabled!</noscript>
+			<span id="attribution">Resources provided by the <a href="http://openlayers.org/">OpenLayers library</a>.
+				Map data from the Vanderbilt <a href="http://cpc-fis.vanderbilt.edu/mapping.html">Facilities Information Mapping Department</a>.
+				Copyright <a href="http://www.vanderbilt.edu/">Vanderbilt University</a> 2016. Created by Jacob McCord.</span>
+		</div>
+		
+		<div id="building-box" >
+			<a href="javascript:void(0)" id="closebutton" onclick="closePanel()">&times;</a>
+			<div id="building-name" class="building-data" style="padding:10px; font-weight:bold; font-size:20px; font-family:Geneva,Arial,sans;"></div>
+			<p id="adrline1" class="building-data" style="margin-left:10px; margin-right:10px;"></p>
+			<p id="adrline2" class="building-data" style="margin-left:10px; margin-right:10px;"></p>
+			<p id="building-info" class="building-data" style="padding:20px; text-align:justify;"></p>
+		</div>
+	
+		<div id="info-box">
+			<div id="logo">
+				<a href="http://www.vanderbilt.edu/"><img src="assets/images/vu03a.jpg" alt="VU logo" style="max-width:1000px;" height="auto" width="100%"/></a><br />
+			</div>
+				<div id="h_text" style="padding:10px;">CAMPUS MAP</div>
+				<div style="padding:10px; overflow-y:hidden; min-height:200px;">
+					<input type="text" style="width:90%" onfocus="if(this.value=='Search for a building!'){this.value=''} 
+								else this.setSelectionRange(0, this.value.length)" 
+								id="search" 
+								value="Search for a building!" 
+								onkeydown= "if (event.keyCode == 13)
+								document.getElementById('go').click()"
+								autocomplete= "off">
+					<button id="go" style="width:50%" onclick="search()">Go</button>
+					<p id="results" align="left">Results will appear here after searching . . .</p>
+					<div id="layers">Click for more maps:
+						<select id="layercontrol" style="width:90%" onchange="setOverlay()">
+							<option value="none">-Normal-</option>
+							<option value="img1">Black and White</option>
+							<option value="img2">Handicapped Accessibility</option>
+							<option value="img3">Bicycle and Motorcycle Access</option>
+							<option value="img4">Emergency Phones</option>
+							<option value="img5">Medical Center Parking</option>
+							<option value="img6">Visitor Parking</option>
+						</select>
+					</div>
+				</div>
+		</div>
+	</div>
+	<script>
+		if(/Android|webOS|iPhone|iPad|Blackberry|BB|Playbook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)){
+			window.location = "./vanderbilt_campus_map_mobile.html";
+		}
+	</script>
+	<script type="text/javascript" src="js/mapCore.js"></script>
+  </body>
+ </html>
